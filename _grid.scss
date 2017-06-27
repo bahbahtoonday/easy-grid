@@ -1,0 +1,141 @@
+@import "variables";
+
+// ---------------------
+// Elements
+// ---------------------
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  position: relative;
+  z-index: 0;
+}
+video {
+  width: 100% !important;
+  outline: none;
+}
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+// ---------------------
+// Grid
+// ---------------------
+
+section {
+  @include clearfix();
+  padding: ms(2) 0;
+
+  @include respond-to(tablet) {
+    padding: ms(4) 0;
+  }
+
+  &.full-screen {
+    background-size: cover;
+    min-height: 100vh;
+    position: relative;
+  }
+
+  &.alt {
+    background: $color-primary;
+    color: white;
+  }
+}
+
+.container {
+  @include container();
+}
+
+.row {
+  @include clearfix();
+}
+
+.column {
+  padding: 0;
+  width: 100%;
+}
+
+@include respond-to(tablet) {
+  .column {
+    float: left;
+    padding: 0 $base-font-size;
+
+    &.no-pad {
+      padding: 0 0;
+    }
+
+    &.no-pad-l {
+      padding: 0 $base-font-size 0 0;
+    }
+
+    &.no-pad-r {
+      padding: 0 0 0 $base-font-size;
+    }
+
+    &.three-fourths {
+      width: 75%;
+    }
+
+    &.two-thirds {
+      width: 66%;
+    }
+
+    &.half {
+      width: 50%;
+    }
+
+    &.two-thirds {
+      width: 67%;
+    }
+
+    &.third {
+      width: 33%;
+    }
+
+    &.fourth {
+      width: 25%;
+    }
+    &.fifth {
+      width: 20%;
+    }
+    &.four-fifths {
+      width: 80%;
+    }
+    &.flow-opposite {
+      float:right;
+    }
+    &.solo {
+      float: none;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+// ---------------------
+// Utilities
+// ---------------------
+
+.clr {
+  @include clearfix();
+}
+.clr-left {
+  clear: left;
+}
+.clr-right {
+  clear: right;
+}
+
+.float-left {
+  float: left;
+}
+.float-right {
+  float: right;
+}

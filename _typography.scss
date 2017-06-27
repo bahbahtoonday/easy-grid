@@ -1,0 +1,91 @@
+@import "variables";
+
+html {
+  font-size: $base-font-size - 0.250rem;
+  line-height: $baseline;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+
+  @include respond-to(tablet) {
+    font-size: $base-font-size - 0.125rem
+  };
+
+  @include respond-to(screen) {
+    font-size: $base-font-size;
+  };
+}
+
+body {
+  color: $base-font-color;
+  font-family: $primary-site-font;
+  line-height: 1.5;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  &.sub {
+    padding-left: ms(2);
+    list-style-type: disc;
+    font-size: ms(-1);
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $secondary-site-font;
+  margin: ms(1) 0 ms(-2);
+  font-weight: inherit;
+  line-height: 1.2;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: $h1-font-size;
+}
+
+h2 {
+  margin-top: 0;
+  font-size: $h2-font-size;
+}
+
+h3 {
+  font-size: $h3-font-size;
+}
+
+h4 {
+  font-size: $h4-font-size;
+}
+h5 {
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+small {
+  font-size: $small-font-size;
+}
+
+p {
+  font-size: ms(1);
+  margin-bottom: ms(1);
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.color-base {
+  color: $base-font-color;
+}
+.color-primary {
+  color: $color-primary;
+}
+.color-secondary {
+  color: $color-secondary;
+}
+.color-tertiary {
+  color: $color-tertiary;
+}

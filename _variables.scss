@@ -1,0 +1,94 @@
+$base-font-color: #404040;
+$base-font-size: 1.125rem;
+$base-font-number: 18;
+
+$green: #5e8139;
+$color-primary: $green;
+
+$gray: #838c96;
+$color-secondary: $gray;
+
+$blue: #345678;
+$color-tertiary: $blue;
+
+@import "ms/modular-scale";
+
+// Typography
+$primary-site-font: Georgia, Cambria, "Times New Roman", Times, serif;
+$secondary-site-font: Montserrat, Gotham, "Helvetica Neue", Arial, sans-serif;
+
+// Readable at small sizes. For small headers
+$baseline: ms(1);
+$h1-font-size: ms(4) !default;
+$h2-font-size: ms(3) !default;
+$h3-font-size: ms(2) !default;
+$h4-font-size: ms(1) !default;
+$h5-font-size: ms(0) !default;
+$h6-font-size: $base-font-size !default;
+$small-font-size: ms(-1) !default;
+
+//------------------
+// Grid Layout and Media Queries
+//------------------
+
+$site-ratio: $fourth;
+$site-width: ms(14);
+// 69.39 == $site_ratio^19
+
+$breakpoints: (
+        "mobile" : 320px,
+        "tablet" : 700px,
+        "screen" : 900px
+);
+
+//------------------
+// Mixins
+//------------------
+
+@mixin container() {
+  margin: 0 auto;
+  max-width: $site-width;
+  width: 84%;
+  @include respond-to(screen) {
+    width: 80%;
+  }
+}
+
+// Responsive
+@function breakpoint($key) {
+  @if map_has_key($breakpoints, $key) {
+    @return map_get($breakpoints, $key);
+  }
+}
+@mixin respond-to($media) {
+  @media (min-width: breakpoint($media)) {
+    @content;
+  }
+}
+
+// Block show hide mixins based off of media query mixin
+@mixin show-on($media) {
+  display: none;
+  @include respond-to($media) {
+    display: block;
+  }
+}
+
+@mixin hide-on($media) {
+  //  display:block;
+  @include respond-to($media) {
+    display: none !important;
+  }
+}
+
+// Clearfix
+@mixin clearfix() {
+  *zoom: 1;
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
