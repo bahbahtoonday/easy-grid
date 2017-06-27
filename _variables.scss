@@ -1,23 +1,34 @@
+@import "ms/modular-scale";
+
+//------------------
+// Site specific variables
+// - Set these at the start, they change per project
+//------------------
+
+$site-ratio: $fourth;
+$site-width: ms(14);
 $base-font-color: #404040;
 $base-font-size: 1.125rem;
 $base-font-number: 18;
 
-$green: #5e8139;
+// Site Color Scheme
 $color-primary: $green;
-
-$gray: #838c96;
 $color-secondary: $gray;
-
-$blue: #345678;
 $color-tertiary: $blue;
 
-@import "ms/modular-scale";
+// Set specific colors
+$gray: #838c96;
+$green: #5e8139;
+$blue: #345678;
 
-// Typography
+// Set Typography
 $primary-site-font: Georgia, Cambria, "Times New Roman", Times, serif;
 $secondary-site-font: Montserrat, Gotham, "Helvetica Neue", Arial, sans-serif;
 
-// Readable at small sizes. For small headers
+//------------------
+// General Variables and mixins
+//------------------
+
 $baseline: ms(1);
 $h1-font-size: ms(4) !default;
 $h2-font-size: ms(3) !default;
@@ -27,18 +38,12 @@ $h5-font-size: ms(0) !default;
 $h6-font-size: $base-font-size !default;
 $small-font-size: ms(-1) !default;
 
-//------------------
-// Grid Layout and Media Queries
-//------------------
-
-$site-ratio: $fourth;
-$site-width: ms(14);
-// 69.39 == $site_ratio^19
-
+// Add more as necessary
 $breakpoints: (
         "mobile" : 320px,
         "tablet" : 700px,
-        "screen" : 900px
+        "screen" : 900px,
+        "big-screen" : 1200px
 );
 
 //------------------

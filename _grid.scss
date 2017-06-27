@@ -59,7 +59,7 @@ section {
 
 .column {
   padding: 0;
-  width: 100%;
+  width: 100%; // All columns full width at smallest resolutions
 }
 
 @include respond-to(tablet) {
